@@ -1,7 +1,8 @@
 # Assignment
 What was the assignment 
 # Picture
-"Image" of my work
+"Image" of my work:
+![A Graph made for AP Human Geo. It illustrates farm land percentage per state](https://raw.githubusercontent.com/hheisig51/BankCarton/master/Images/Percentage_of_Farm_Land_per_State.png)
 # Code (if assignment involves code)
 Actual c%de or link to c%de file in repository
 # Reflection
