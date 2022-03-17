@@ -2,7 +2,7 @@
 name: I need this, eventually
 about: This is if you need help whenever
 title: "[Short Description]"
-labels: Help!
+labels: Help!, Mammoth
 assignees: ''
 
 ---
