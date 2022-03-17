@@ -1,6 +1,6 @@
 ---
 name: Help!
-about: I have a problem :(
+about: Make sure you assign an urgency label to this!
 title: "[Issue]"
 labels: Help!
 assignees: ''
