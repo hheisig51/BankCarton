@@ -1,8 +1,8 @@
 ---
-name: Help!
-about: This if you need help in 1-2 days
+name: I need this, eventually
+about: This is if you need help whenever
 title: "[Short Description]"
-labels: Help!, Today!
+labels: Help!, J Chilling
 assignees: ''
 
 ---

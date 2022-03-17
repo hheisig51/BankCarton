@@ -1,8 +1,8 @@
 ---
-name: Help!
-about: This if you need help in 1-2 days
+name: I need this soon-ish
+about: This is if you need help in 1-2 weeks
 title: "[Short Description]"
-labels: Help!, Today!
+labels: Help!, It can wait
 assignees: ''
 
 ---
