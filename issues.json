@@ -1,0 +1,83 @@
+[
+  {
+    "url": "https://api.github.com/repos/hheisig51/BankCarton/issues/8",
+    "repository_url": "https://api.github.com/repos/hheisig51/BankCarton",
+    "labels_url": "https://api.github.com/repos/hheisig51/BankCarton/issues/8/labels{/name}",
+    "comments_url": "https://api.github.com/repos/hheisig51/BankCarton/issues/8/comments",
+    "events_url": "https://api.github.com/repos/hheisig51/BankCarton/issues/8/events",
+    "html_url": "https://github.com/hheisig51/BankCarton/issues/8",
+    "id": 1315482299,
+    "node_id": "I_kwDOEcUgJs5OaKq7",
+    "number": 8,
+    "title": "[Short Description]",
+    "user": {
+      "login": "hheisig51",
+      "id": 71345201,
+      "node_id": "MDQ6VXNlcjcxMzQ1MjAx",
+      "avatar_url": "https://avatars.githubusercontent.com/u/71345201?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/hheisig51",
+      "html_url": "https://github.com/hheisig51",
+      "followers_url": "https://api.github.com/users/hheisig51/followers",
+      "following_url": "https://api.github.com/users/hheisig51/following{/other_user}",
+      "gists_url": "https://api.github.com/users/hheisig51/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/hheisig51/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/hheisig51/subscriptions",
+      "organizations_url": "https://api.github.com/users/hheisig51/orgs",
+      "repos_url": "https://api.github.com/users/hheisig51/repos",
+      "events_url": "https://api.github.com/users/hheisig51/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/hheisig51/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+      {
+        "id": 2371997559,
+        "node_id": "MDU6TGFiZWwyMzcxOTk3NTU5",
+        "url": "https://api.github.com/repos/hheisig51/BankCarton/labels/Help!",
+        "name": "Help!",
+        "color": "008672",
+        "default": false,
+        "description": "Something's up!"
+      },
+      {
+        "id": 3938495910,
+        "node_id": "LA_kwDOEcUgJs7qwK2m",
+        "url": "https://api.github.com/repos/hheisig51/BankCarton/labels/Mammoth",
+        "name": "Mammoth",
+        "color": "02CA54",
+        "default": false,
+        "description": "This is something, but not imminent"
+      }
+    ],
+    "state": "open",
+    "locked": false,
+    "assignee": null,
+    "assignees": [
+
+    ],
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2022-07-22T23:13:46Z",
+    "updated_at": "2022-07-22T23:13:46Z",
+    "closed_at": null,
+    "author_association": "OWNER",
+    "active_lock_reason": null,
+    "body": "Period/Teacher - [Type Here]\r\n\r\nContact Info - [Type Here]\r\n\r\nIssue Description:\r\n[Type here]\r\n",
+    "reactions": {
+      "url": "https://api.github.com/repos/hheisig51/BankCarton/issues/8/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "timeline_url": "https://api.github.com/repos/hheisig51/BankCarton/issues/8/timeline",
+    "performed_via_github_app": null,
+    "state_reason": null
+  }
+]
