@@ -1,0 +1,22 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css" />
+
+    <script type="text/javascript" src="DataTables/datatables.min.js"></script>
+</head>
+
+<body>
+    <p>pre</p>
+    <script>
+        $('#myTable').DataTable({
+            ajax: {
+                url: 'https://api.github.com/repos/hheisig51/BankCarton/issues',
+                dataSrc: ''
+            },
+        });
+    </script>
+    <p>post</p>
+</body>
+
+</html>
