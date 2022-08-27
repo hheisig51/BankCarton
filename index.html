@@ -86,8 +86,7 @@
                         issue += '<td>' +
                             value.user.login + '</td>';
 
-                        issue += '<td>' +
-                            value.title + '</td>';
+                        issue += `<td><a target="_blank" href="${value.html_url}">${value.title}</a></td>`;
 
                         issue += '<td>' +
                             issue_type + '</td>';
