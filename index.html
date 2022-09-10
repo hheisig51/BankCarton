@@ -59,7 +59,6 @@
         <tr>
             <th>User</th>
             <th>Issue Title</th>
-            <!--        <th>Label</th> -->
             <th>Urgency</th>
             <th>Creation Date</th>
         </tr>
@@ -76,12 +75,9 @@
         }; // issues w/o one of thsese labels will not be shown, use this to separate things like help from 3d printing etc
         console.log("Table startup!")
         function fillTable() {
-            /// console.log("filling table with data");
-
             // FETCHING DATA FROM JSON FILE
             $.getJSON("issues.json",
                 function (data) {
-                    /// console.log("got data");
                     $('#table').html(TABLE_HEADERS); //clear the previous data
                     var issue = '';
                     // ITERATING THROUGH OBJECTS
@@ -91,7 +87,6 @@
                         const type_labels = value.labels.filter(label => (Object.keys(ISSUE_TYPE_MAP).includes(label.id.toString())))
                         if (type_labels.length != 1) {
                             // issue doesn't have exactly one type, ignore
-                            /// console.log(`issue ${value.title} thrownout for bad issue type (elgible labels: ${Object.keys(ISSUE_TYPE_MAP)}, all labels: ${value.labels.map(val => [val.id, typeof val.id, val.name])})`)
                             return
                         } else {
                             issue_type = ISSUE_TYPE_MAP[type_labels[0].id]
