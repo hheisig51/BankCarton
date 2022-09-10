@@ -2,6 +2,7 @@
 
 <head>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="luxon.min.js"></script>
     <style>
         header {
             font-size: x-large;
@@ -9,11 +10,13 @@
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             text-align: center;
         }
+
         mark {
             background-color: black;
             color: white;
-            padding:0.1em 0.2em;
+            padding: 0.1em 0.2em;
         }
+
         table {
             margin: 0 auto;
             font-size: large;
@@ -50,13 +53,13 @@
             #TREEKILLERMILLER
         </mark>
     </header>
-    <br/><br/>
+    <br /><br />
     <table id='table'>
         <!-- HEADING FORMATION -->
         <tr>
             <th>User</th>
             <th>Issue Title</th>
-<!--        <th>Label</th> -->
+            <!--        <th>Label</th> -->
             <th>Urgency</th>
             <th>Creation Date</th>
         </tr>
@@ -76,12 +79,11 @@
             /// console.log("filling table with data");
 
             // FETCHING DATA FROM JSON FILE
-            $.getJSON("https://api.github.com/repos/hheisig51/BankCarton/issues",
+            $.getJSON("issues.json",
                 function (data) {
                     /// console.log("got data");
                     $('#table').html(TABLE_HEADERS); //clear the previous data
                     var issue = '';
-
                     // ITERATING THROUGH OBJECTS
                     $.each(data, function (key, value) {
                         // a number of label checks
@@ -103,6 +105,44 @@
                         } else {
                             issue_urgency = URGENCY_LABEL_MAP[urgency_labels[0].id]
                         }
+                        let genesis = luxon.DateTime.fromISO(value.created_at);
+                        let diff = luxon.DateTime.now().minus(genesis.ts);
+                        let months_t;
+                        let days_t;
+                        let hours_t;
+                        let minutes_t;
+
+                        if (diff.month < 2) {
+                            months_t = ""
+                        } else {
+                            months_c = diff.month - 1;
+                            months_t = months_c + ' ' + 'months' + ',' + ' '
+                        }
+
+                        if (diff.day < 2) {
+                            days_t = ""
+                        } else if (diff.month < 2) {
+                            days_c = diff.day - 1;
+                            days_t = days_c + ' ' + 'days' + ',' + ' '
+                        }
+
+                        if (diff.hour < 1) {
+                            hours_t = ""
+                        } else if (diff.day >= 2) {
+                            hours_t = 'and' + ' ' + diff.hour + ' ' + 'hours'
+                        } else {
+                            hours_t = diff.hour + ' ' + 'hours' + ' '
+                        }
+
+                        if (diff.minute < 1) {
+                            minutes_t = ""
+                        } else if (diff.day < 2) {
+                            minutes_t = 'and' + ' ' + diff.minute + ' ' + 'minutes';
+                        } else {
+                            minutes_t = ""
+                        }
+
+
                         issue += '<tr>';
                         issue += '<td>' +
                             value.user.login + '</td>';
@@ -113,8 +153,7 @@
                             issue_urgency + '</td>';
 
                         issue += '<td>' +
-                            value.created_at + '</td>';
-
+                            months_t + days_t + hours_t + minutes_t + '</td>';
                         issue += '</tr>';
                     });
 
