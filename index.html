@@ -76,7 +76,7 @@
         console.log("Table startup!")
         function fillTable() {
             // FETCHING DATA FROM JSON FILE
-            $.getJSON("issues.json",
+            $.getJSON("https://api.github.com/repos/hheisig51/BankCarton/issues",
                 function (data) {
                     $('#table').html(TABLE_HEADERS); //clear the previous data
                     var issue = '';
@@ -100,8 +100,9 @@
                         } else {
                             issue_urgency = URGENCY_LABEL_MAP[urgency_labels[0].id]
                         }
-                        let genesis = luxon.DateTime.fromISO(value.created_at);
+                        let genesis = luxon.DateTime.fromISO(value.created_at).plus(86400000);
                         let diff = luxon.DateTime.now().minus(genesis.ts);
+                        console.log(diff);
                         let months_t;
                         let days_t;
                         let hours_t;
@@ -114,29 +115,26 @@
                             months_t = months_c + ' ' + 'months' + ',' + ' '
                         }
 
-                        if (diff.day < 2) {
+                        if (diff.day < 1) {
                             days_t = ""
-                        } else if (diff.month < 2) {
-                            days_c = diff.day - 1;
-                            days_t = days_c + ' ' + 'days' + ',' + ' '
+                        } else {
+                            // days_c = diff.day - 1;
+                            days_t = diff.day + ' ' + 'days' + ',' + ' '
                         }
 
-                        if (diff.hour < 1) {
+                        if (diff.hour < 0) {
                             hours_t = ""
-                        } else if (diff.day >= 2) {
-                            hours_t = 'and' + ' ' + diff.hour + ' ' + 'hours'
                         } else {
-                            hours_t = diff.hour + ' ' + 'hours' + ' '
+                            // hours_c = diff.hour - 1;
+                            hours_t = diff.hour + ' ' + 'hours' + ',' + ' '
                         }
 
                         if (diff.minute < 1) {
                             minutes_t = ""
-                        } else if (diff.day < 2) {
-                            minutes_t = 'and' + ' ' + diff.minute + ' ' + 'minutes';
                         } else {
-                            minutes_t = ""
+                            // minutes_c = diff.minute - 1;
+                            minutes_t = 'and' + ' ' + diff.minute + ' ' + 'minutes'
                         }
-
 
                         issue += '<tr>';
                         issue += '<td>' +
