@@ -73,8 +73,7 @@
         console.log("Table startup!")
         function fillTable() {
             // FETCHING DATA FROM JSON FILE
-            // $.getJSON("https://api.github.com/repos/hheisig51/BankCarton/issues",
-            $.getJSON("issues.json",
+            $.getJSON("https://api.github.com/repos/hheisig51/BankCarton/issues",
                 function (data) {
                     $('#table').html(TABLE_HEADERS); //clear the previous data
                     var issue = '';
