@@ -25,7 +25,7 @@
         }
 
         td {
-            background-color: #f5d4e4;
+            background-color: #F7C59F;
             border: 1px solid black;
         }
 
@@ -70,32 +70,21 @@
             3938493162: "Medium",
             3938495910: "Low",
         }; // mapping of urgency label ids to display names
-        const ISSUE_TYPE_MAP = {
-            2371997559: "Help!"
-        }; // issues w/o one of thsese labels will not be shown, use this to separate things like help from 3d printing etc
         console.log("Table startup!")
         function fillTable() {
             // FETCHING DATA FROM JSON FILE
-            $.getJSON("https://api.github.com/repos/hheisig51/BankCarton/issues",
+            // $.getJSON("https://api.github.com/repos/hheisig51/BankCarton/issues",
+            $.getJSON("issues.json",
                 function (data) {
                     $('#table').html(TABLE_HEADERS); //clear the previous data
                     var issue = '';
                     // ITERATING THROUGH OBJECTS
                     $.each(data, function (key, value) {
-                        // a number of label checks
-                        let issue_type;
-                        const type_labels = value.labels.filter(label => (Object.keys(ISSUE_TYPE_MAP).includes(label.id.toString())))
-                        if (type_labels.length != 1) {
-                            // issue doesn't have exactly one type, ignore
-                            return
-                        } else {
-                            issue_type = ISSUE_TYPE_MAP[type_labels[0].id]
-                        }
                         let issue_urgency;
                         const urgency_labels = value.labels.filter(label => (Object.keys(URGENCY_LABEL_MAP).includes(label.id.toString())))
                         if (urgency_labels.length < 1) {
                             // no label categorized as urgency
-                            // console.log(`issue ${value.title} has bad urgency (elgible urgencies: ${urgency_labels})`)
+                            console.log(`issue ${value.title} has bad urgency (elgible urgencies: ${urgency_labels})`)
                             issue_urgency = ""
                         } else {
                             issue_urgency = URGENCY_LABEL_MAP[urgency_labels[0].id]
@@ -118,21 +107,19 @@
                         if (diff.day < 1) {
                             days_t = ""
                         } else {
-                            // days_c = diff.day - 1;
+
                             days_t = diff.day + ' ' + 'days' + ',' + ' '
                         }
 
                         if (diff.hour < 0) {
                             hours_t = ""
                         } else {
-                            // hours_c = diff.hour - 1;
                             hours_t = diff.hour + ' ' + 'hours' + ',' + ' '
                         }
 
                         if (diff.minute < 1) {
                             minutes_t = ""
                         } else {
-                            // minutes_c = diff.minute - 1;
                             minutes_t = 'and' + ' ' + diff.minute + ' ' + 'minutes'
                         }
 

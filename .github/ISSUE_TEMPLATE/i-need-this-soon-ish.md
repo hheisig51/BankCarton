@@ -2,7 +2,7 @@
 name: I need this soon-ish
 about: This is if you need help in 1-2 weeks
 title: "[Short Description]"
-labels: 'Help!, Urgency: Gazelle'
+labels: 'Help!, Urgency: Medium'
 assignees: ''
 
 ---
